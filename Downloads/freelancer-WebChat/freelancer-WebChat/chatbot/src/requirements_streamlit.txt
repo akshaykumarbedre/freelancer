@@ -1,0 +1,21 @@
+# Install with: pip install -r requirements_streamlit.txt --user
+
+# Core dependencies
+streamlit
+streamlit-option-menu
+
+# Data processing and utilities
+requests
+python-dotenv
+urllib3
+unstructured
+
+# Language model dependencies
+langchain
+langchain-community
+langchain-text-splitters
+faiss-cpu
+
+# Web scraping dependencies
+selenium
+webdriver-manager
