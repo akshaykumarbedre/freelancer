@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Briefcase, Code, Mail, Github, Linkedin, Users, BarChart, Braces, Server } from 'lucide-react';
 import { Metadata } from 'next';
@@ -14,15 +15,15 @@ export default function Home() {
       title: "AI Customer Service Bot",
       description: "Intelligent chatbot system helping businesses automate customer support with natural language processing",
       technologies: ["TensorFlow", "React", "Node.js", "NLP"],
-      imageUrl: "/images/ai-chatbot.jpg",
-      demoUrl: "https://ai-chatbot-demo.vercel.app",
+      imageUrl: "/globe.svg",  // Using available globe icon as placeholder
+      demoUrl: "https://akshaykumarbedre-freelancer.streamlit.app",
       githubUrl: "https://github.com/akshaykumarbedreimport/ai-chatbot"
     },
     {
       title: "Predictive Analytics Dashboard",
       description: "Data visualization platform with predictive modeling for business intelligence",
       technologies: ["Python", "PyTorch", "Next.js", "D3.js"],
-      imageUrl: "/images/analytics-dashboard.jpg",
+      imageUrl: "/window.svg",  // Using available window icon as placeholder
       demoUrl: "https://analytics-dashboard-demo.vercel.app",
       githubUrl: "https://github.com/akshaykumarbedreimport/analytics-dashboard"
     },
@@ -30,7 +31,7 @@ export default function Home() {
       title: "AI-Powered Recommendation Engine",
       description: "Machine learning solution for personalized product recommendations in e-commerce",
       technologies: ["Scikit-learn", "FastAPI", "React", "MongoDB"],
-      imageUrl: "/images/recommendation-engine.jpg",
+      imageUrl: "/file.svg",  // Using available file icon as placeholder
       demoUrl: "https://recommendation-engine-demo.vercel.app",
       githubUrl: "https://github.com/akshaykumarbedreimport/recommendation-engine"
     }
@@ -123,7 +124,7 @@ export default function Home() {
         <div className="md:w-1/2">
           <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl">
             <Image 
-              src="/images/hero-image.jpg" 
+              src="/hero-image.jpg"
               alt="AI Developer" 
               fill
               priority
@@ -222,7 +223,7 @@ export default function Home() {
         <div className="md:w-2/5 mb-8 md:mb-0">
           <div className="relative h-80 w-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
             <Image 
-              src="/images/profile-photo.jpg" 
+              src="/profile-photo.jpg" 
               alt="Akshay Kumar BM" 
               fill
               className="object-cover"
@@ -317,15 +318,15 @@ export default function Home() {
                   href="mailto:akshay.kumar@example.com" 
                   className="flex items-center hover:text-blue-600 transition"
                 >
-                  <Mail className="mr-3 text-blue-500" /> akshay.kumar@example.com
+                  <Mail className="mr-3 text-blue-500" />akshaykumarbm.aifx.gmail.com
                 </a>
                 <a 
-                  href="https://github.com/akshaykumarbedreimport" 
+                  href="https://github.com/akshaykumarbedre" 
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="flex items-center hover:text-blue-600 transition"
                 >
-                  <Github className="mr-3 text-blue-500" /> github.com/akshaykumarbedreimport
+                  <Github className="mr-3 text-blue-500" /> github.com/akshaykumarbedre
                 </a>
                 <a 
                   href="https://linkedin.com/in/akshaykumarbm" 
