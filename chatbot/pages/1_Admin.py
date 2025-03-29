@@ -2,11 +2,16 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import sys
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Add the src directory to the path so we can import our modules
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src.services.main_service import MainService
+
+# Load environment variables
+load_dotenv()
 
 # Initialize services
 @st.cache_resource
@@ -21,7 +26,36 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Main navigation
+# Authentication function
+def authenticate(username, password):
+    correct_username = os.getenv("ADMIN_EMAIL")
+    correct_password = os.getenv("ADMIN_PASSWORD")
+    return username == correct_username and password == correct_password
+
+# Check if user is authenticated
+if 'authenticated' not in st.session_state:
+    st.session_state['authenticated'] = False
+
+# Show login form if not authenticated
+if not st.session_state['authenticated']:
+    st.title("Admin Login")
+    with st.form("login_form"):
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        submit_button = st.form_submit_button("Login")
+        
+        if submit_button:
+            if authenticate(username, password):
+                st.session_state['authenticated'] = True
+                st.success("Login successful!")
+                st.rerun()  # Updated from st.experimental_rerun()
+            else:
+                st.error("Invalid username or password")
+    
+    # Exit the script here if not authenticated
+    st.stop()
+
+# Main navigation - Only shown if authenticated
 selected = option_menu(
     menu_title="Admin Panel",
     options=["URL Processing", "Product Management", "Description Management"],
@@ -30,6 +64,13 @@ selected = option_menu(
     default_index=0,
     orientation="horizontal",
 )
+
+# Add logout button in sidebar
+with st.sidebar:
+    st.title("Admin Controls")
+    if st.button("Logout"):
+        st.session_state['authenticated'] = False
+        st.rerun()  # Updated from st.experimental_rerun()
 
 # Initialize main service
 main_service = get_main_service()

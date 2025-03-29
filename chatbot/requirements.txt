@@ -1,0 +1,13 @@
+streamlit
+streamlit-option-menu
+python-dotenv
+google-generativeai
+langchain
+langchain-community
+langchain-core
+chromadb
+beautifulsoup4
+requests
+pandas
+numpy
+pydantic
