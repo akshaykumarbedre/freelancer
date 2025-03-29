@@ -1,12 +1,12 @@
 import os
 from dotenv import load_dotenv
-
+import streamlit as st
 # Load environment variables
 load_dotenv()
 
 class Config:
-    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-    MODEL = os.getenv("MODEL")
+    GOOGLE_API_KEY = st.secrets['GOOGLE_API_KEY'] #os.getenv("GOOGLE_API_KEY")
+    MODEL =st.secrets['MODEL']# os.getenv("MODEL")
     VECTOR_STORE_PATH = "vectors"
     PRODUCT_INDEX_NAME = "product_info_index"
     DESCRIPTION_INDEX_NAME = "description_index"

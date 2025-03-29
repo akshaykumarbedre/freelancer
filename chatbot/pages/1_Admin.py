@@ -11,7 +11,7 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from src.services.main_service import MainService
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
 
 # Initialize services
 @st.cache_resource
@@ -28,8 +28,8 @@ st.set_page_config(
 
 # Authentication function
 def authenticate(username, password):
-    correct_username = os.getenv("ADMIN_EMAIL")
-    correct_password = os.getenv("ADMIN_PASSWORD")
+    correct_username = st.secrets['ADMIN_EMAIL']#os.getenv("ADMIN_EMAIL")
+    correct_password = st.secrets['ADMIN_PASSWORD']#os.getenv("ADMIN_PASSWORD")
     return username == correct_username and password == correct_password
 
 # Check if user is authenticated
