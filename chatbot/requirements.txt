@@ -8,3 +8,4 @@ selenium
 requests
 pydantic
 langchain_google_genai
+webdriver_manager
