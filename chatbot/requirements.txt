@@ -11,3 +11,4 @@ requests
 pandas
 numpy
 pydantic
+langchain_google_genai
