@@ -153,7 +153,7 @@ export default function Home() {
         <div className="md:w-1/2">
           <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl">
             <Image 
-              src="/hero-image.jpg"
+              src="/hero-image.webp"
               alt="AI Solutions for Small Business" 
               fill
               priority
