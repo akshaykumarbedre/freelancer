@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Briefcase, Code, Mail, Github, Linkedin, Bot, BarChart, Braces, Server, MessageSquare, Workflow, Zap, Award } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { getProjectsForHomepage } from '../data/projects';
 
 export const metadata = {
   title: 'Akshay Kumar BM | AI Solutions for Small Businesses',
@@ -10,36 +11,8 @@ export const metadata = {
 }
 
 export default function Home() {
-  const projects = [
-    {
-      id: 'small-biz-chatbot',
-      title: "Small Business AI Chatbot",
-      description: "24/7 customer support chatbot that increased response rates by 85% and reduced support costs by 40% for a local retail chain",
-      technologies: ["OpenAI API", "React", "Node.js", "MongoDB"],
-      imageUrl: "/chatbot.svg",  // Using available icon as placeholder
-      demoUrl: "https://small-biz-chatbot-demo.vercel.app",
-      githubUrl: "https://github.com/akshaykumarbedre/small-biz-chatbot"
-    },
-    {
-      id: 'email-automation',
-      title: "Email & Task Automation System",
-      description: "AI workflow automation that saved 15+ hours weekly for a small accounting firm by automating email responses and document processing",
-      technologies: ["Python", "GPT-4", "Azure Functions", "Power Automate"],
-      imageUrl: "/automation.svg",  // Using available icon as placeholder
-      demoUrl: "https://task-automation-demo.vercel.app",
-      githubUrl: "https://github.com/akshaykumarbedre/email-automation"
-    },
-    {
-      id: 'analytics-dashboard',
-      title: "Small Business Analytics Dashboard",
-      description: "Affordable data analytics solution that helped a family restaurant increase profits by 22% through customer behavior insights",
-      technologies: ["TensorFlow", "Next.js", "D3.js", "Firebase"],
-      imageUrl: "/analytics.svg",  // Using available icon as placeholder
-      demoUrl: "https://small-biz-analytics.vercel.app",
-      githubUrl: "https://github.com/akshaykumarbedre/small-biz-analytics"
-    }
-  ];
-
+  const projects = getProjectsForHomepage();
+  
   const services = [
     {
       title: "AI Customer Service Chatbots",
