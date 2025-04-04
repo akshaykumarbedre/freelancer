@@ -29,22 +29,22 @@ export default function ProjectDetail({ params }) {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-8">
-          <Link href="/#projects" className="inline-flex items-center text-indigo-600 mb-6 hover:text-indigo-800">
+        <div className="container mx-auto px-4 py-4 sm:py-8">
+          <Link href="/#projects" className="inline-flex items-center text-indigo-600 mb-4 sm:mb-6 hover:text-indigo-800">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Projects
           </Link>
-          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+          <span className="bg-indigo-100 text-indigo-700 px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 inline-block">
             {project.category}
           </span>
-          <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <p className="text-xl text-slate-600">{project.tagline}</p>
+          <h1 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">{project.title}</h1>
+          <p className="text-lg sm:text-xl text-slate-600">{project.tagline}</p>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
+      <section className="container mx-auto px-4 py-8 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="relative rounded-xl overflow-hidden shadow-2xl" style={{ minHeight: "250px", height: "auto", maxHeight: "500px" }}>
             {project.videoUrl ? (
               <div className="relative w-full h-full">
                 <video 
@@ -53,7 +53,7 @@ export default function ProjectDetail({ params }) {
                   autoPlay
                   loop
                   muted
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   poster={project.mainImage}
                 />
                 <button 
@@ -77,22 +77,22 @@ export default function ProjectDetail({ params }) {
             )}
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-6">Potential Benefits</h2>
-            <div className="grid grid-cols-2 gap-6">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Potential Benefits</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(project.benefits).map(([key, value]) => (
                 <div key={key} className="bg-white p-4 rounded-xl shadow-md">
                   <h3 className="font-medium text-slate-600 mb-2">
                     {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                   </h3>
-                  <p className="text-lg font-medium text-indigo-600">{value}</p>
+                  <p className="text-base sm:text-lg font-medium text-indigo-600">{value}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-8">
-              <h3 className="font-medium text-slate-600 mb-4">Technologies Used</h3>
-              <div className="flex flex-wrap gap-4">
+            <div className="mt-6 sm:mt-8">
+              <h3 className="font-medium text-slate-600 mb-3 sm:mb-4">Technologies Used</h3>
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 {project.technologies.map((tech, index) => (
-                  <div key={index} className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                  <div key={index} className="flex items-center bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm text-sm">
                     {tech.icon}
                     <span className="ml-2">{tech.name}</span>
                   </div>
@@ -104,10 +104,10 @@ export default function ProjectDetail({ params }) {
       </section>
 
       {/* Challenge Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-8 sm:py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">The Challenge</h2>
-          <div className="grid md:grid-cols-2 gap-12">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">The Challenge</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
             <div>
               <div className="prose max-w-none">
                 {project.challenge.description.split('\n\n').map((paragraph, index) => (
@@ -115,12 +115,12 @@ export default function ProjectDetail({ params }) {
                 ))}
               </div>
             </div>
-            <div className="space-y-6">
-              <div className="bg-slate-50 p-6 rounded-xl">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-slate-50 p-4 sm:p-6 rounded-xl">
                 <h3 className="font-semibold mb-2">Industry</h3>
                 <p className="text-slate-600">{project.challenge.industryContext}</p>
               </div>
-              <div className="bg-slate-50 p-6 rounded-xl">
+              <div className="bg-slate-50 p-4 sm:p-6 rounded-xl">
                 <h3 className="font-semibold mb-2">Target Businesses</h3>
                 <p className="text-slate-600">{project.challenge.clientProfile}</p>
               </div>
@@ -130,9 +130,9 @@ export default function ProjectDetail({ params }) {
       </section>
 
       {/* Solution Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8">My Approach</h2>
-        <div className="grid md:grid-cols-2 gap-12">
+      <section className="container mx-auto px-4 py-8 sm:py-16">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">My Approach</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div>
             <div className="prose max-w-none">
               {project.solution.approach.split('\n\n').map((paragraph, index) => (
@@ -162,12 +162,12 @@ export default function ProjectDetail({ params }) {
 
 
       {/* Expected Outcomes Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-8 sm:py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
             {project.expectedOutcomes ? 'Expected Outcomes' : 'Impact & Results'}
           </h2>
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
             <div>
               <div className="space-y-6">
                 {project.expectedOutcomes?.potentialImprovements && 
@@ -249,14 +249,14 @@ export default function ProjectDetail({ params }) {
       </section>
 
       {/* Technical Details */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8">Technical Details</h2>
-        <div className="grid md:grid-cols-1 gap-12">
+      <section className="container mx-auto px-4 py-8 sm:py-16">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Technical Details</h2>
+        <div className="grid md:grid-cols-1 gap-8 sm:gap-12">
           <div>
-            <h3 className="font-semibold mb-6">Technology Stack</h3>
-            <div className="space-y-4">
+            <h3 className="font-semibold mb-4 sm:mb-6">Technology Stack</h3>
+            <div className="space-y-3 sm:space-y-4">
               {project.technical.stack.map((tech, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-md">
+                <div key={index} className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
                   <h4 className="font-medium mb-2">{tech.name}</h4>
                   <p className="text-slate-600">{tech.purpose}</p>
                 </div>
@@ -268,14 +268,14 @@ export default function ProjectDetail({ params }) {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="bg-indigo-600 text-white rounded-xl p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-xl mb-8">Let's discuss how this solution can help your business grow</p>
+      <section className="container mx-auto px-4 py-8 sm:py-16">
+        <div className="bg-indigo-600 text-white rounded-xl p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to Transform Your Business?</h2>
+          <p className="text-lg sm:text-xl mb-6 sm:mb-8">Let's discuss how this solution can help your business grow</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="/#contact" 
-              className="bg-white text-indigo-600 px-8 py-3 rounded-full hover:bg-indigo-50 transition shadow-md font-medium"
+              className="bg-white text-indigo-600 px-6 sm:px-8 py-3 rounded-full hover:bg-indigo-50 transition shadow-md font-medium"
             >
               Book Free Consultation
             </a>
@@ -283,7 +283,7 @@ export default function ProjectDetail({ params }) {
               href={`https://github.com/akshaykumarbedre/${projectId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition font-medium"
+              className="border border-white text-white px-6 sm:px-8 py-3 rounded-full hover:bg-indigo-700 transition font-medium"
             >
               View Code
             </a>

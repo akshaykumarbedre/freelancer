@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Briefcase, Code, Mail, Github, Linkedin, Bot, BarChart, Braces, Server, MessageSquare, Workflow, Zap, Award } from 'lucide-react';
+import { Briefcase, Code, Mail, Github, Linkedin, Bot, BarChart, Braces, Server, MessageSquare, Workflow, Zap, Award, Menu, X } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getProjectsForHomepage } from '../data/projects';
+import MobileMenu from '../components/MobileMenu';
 
 export const metadata = {
   title: 'Akshay Kumar BM | AI Solutions for Small Businesses',
@@ -75,7 +76,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
-      {/* Header */}
+      {/* Header with Mobile Navigation */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold flex items-center">
@@ -83,7 +84,9 @@ export default function Home() {
             <span className="hidden sm:inline">Akshay Kumar BM</span>
             <span className="sm:hidden">AK</span>
           </h1>
-          <nav className="space-x-4 text-sm sm:text-base">
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-4 text-base">
             <a href="#services" className="hover:text-indigo-600 transition">Services</a>
             <a href="#projects" className="hover:text-indigo-600 transition">Projects</a>
             <a href="#testimonials" className="hover:text-indigo-600 transition">Testimonials</a>
@@ -91,40 +94,43 @@ export default function Home() {
               Get Quote
             </a>
           </nav>
+          
+          {/* Mobile Menu Button (Client Component) */}
+          <MobileMenu />
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-20 flex flex-col md:flex-row items-center">
+      <section className="container mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+          <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4 inline-block">
             AI Solutions for Small Businesses
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
-            Grow Your Small Business with<br />
-            <span className="text-indigo-600">Affordable AI Tools</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900 leading-tight">
+            Grow Your Small Business with
+            <span className="text-indigo-600 block mt-1">Affordable AI Tools</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto md:mx-0 mb-6">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto md:mx-0 mb-8">
             Custom chatbots, automation solutions, and AI integrations that save time, 
             reduce costs, and help your small business compete with the big players.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <a 
               href="#contact" 
-              className="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition shadow-md font-medium"
+              className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md font-medium text-center"
             >
               Get Free Consultation
             </a>
             <a 
               href="#services" 
-              className="border border-indigo-600 text-indigo-600 px-8 py-3 rounded-full hover:bg-indigo-50 transition font-medium"
+              className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full hover:bg-indigo-50 transition font-medium text-center"
             >
               View AI Services
             </a>
           </div>
         </div>
-        <div className="md:w-1/2">
-          <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl">
+        <div className="md:w-1/2 mt-8 md:mt-0">
+          <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl mx-auto max-w-md">
             <Image 
               src="/hero-image.webp"
               alt="AI Solutions for Small Business" 
@@ -138,7 +144,7 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
@@ -156,16 +162,16 @@ export default function Home() {
 
       {/* Services Section */}
       <section id="services" className="container mx-auto px-4 py-16">
-        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
           Affordable AI Services
         </span>
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           AI Solutions Designed for Small Businesses
         </h2>
-        <p className="text-slate-600 max-w-3xl mb-12">
+        <p className="text-slate-600 max-w-3xl mb-8 sm:mb-12">
           Powerful AI tools that fit your budget and solve real problems for your small business
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
@@ -186,16 +192,16 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="container mx-auto px-4 py-16 bg-white rounded-xl shadow-sm my-8">
-        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
           Success Stories
         </span>
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           AI Solutions That Delivered Results
         </h2>
-        <p className="text-slate-600 max-w-3xl mb-12">
+        <p className="text-slate-600 max-w-3xl mb-8 sm:mb-12">
           Real small businesses that saved time, reduced costs, and improved customer satisfaction
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <div 
               key={index} 
@@ -251,36 +257,36 @@ export default function Home() {
 
       {/* How It Works Section */}
       <section className="container mx-auto px-4 py-16">
-        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
           Simple Process
         </span>
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           How We'll Work Together
         </h2>
-        <p className="text-slate-600 max-w-3xl mb-12">
+        <p className="text-slate-600 max-w-3xl mb-8 sm:mb-12">
           A straightforward approach designed for busy small business owners
         </p>
         
-        <div className="grid md:grid-cols-4 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-md relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="bg-white p-6 rounded-xl shadow-md relative mt-6">
             <span className="absolute -top-4 -left-4 bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</span>
             <h3 className="text-lg font-semibold mb-2 mt-2">Free Consultation</h3>
             <p className="text-slate-600">We'll discuss your business challenges and identify where AI can help</p>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-md relative">
+          <div className="bg-white p-6 rounded-xl shadow-md relative mt-6">
             <span className="absolute -top-4 -left-4 bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</span>
             <h3 className="text-lg font-semibold mb-2 mt-2">Custom Proposal</h3>
             <p className="text-slate-600">You'll receive a tailored solution with clear pricing and deliverables</p>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-md relative">
+          <div className="bg-white p-6 rounded-xl shadow-md relative mt-6">
             <span className="absolute -top-4 -left-4 bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</span>
             <h3 className="text-lg font-semibold mb-2 mt-2">Quick Development</h3>
             <p className="text-slate-600">Your solution is built in 2-4 weeks with regular progress updates</p>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-md relative">
+          <div className="bg-white p-6 rounded-xl shadow-md relative mt-6">
             <span className="absolute -top-4 -left-4 bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">4</span>
             <h3 className="text-lg font-semibold mb-2 mt-2">Ongoing Support</h3>
             <p className="text-slate-600">Training for your team and continued assistance to ensure success</p>
@@ -291,7 +297,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center bg-white rounded-xl shadow-sm my-8">
         <div className="md:w-1/3 mb-8 md:mb-0">
-          <div className="relative h-80 w-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
+          <div className="relative h-64 w-64 sm:h-80 sm:w-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
             <Image 
               src="/profile-photo.jpg" 
               alt="Akshay Kumar BM" 
@@ -301,10 +307,10 @@ export default function Home() {
           </div>
         </div>
         <div className="md:w-2/3 md:pl-12">
-          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
             Your AI Partner
           </span>
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
           <p className="text-slate-600 mb-6">
             I'm Akshay, an AI specialist who helps small businesses access the same powerful technology 
             that big companies use, but at a fraction of the cost. After 8 years of building enterprise AI 
@@ -315,7 +321,7 @@ export default function Home() {
             professionals, and growing small businesses. Every solution I build is designed to deliver 
             immediate value while being easy to use and maintain.
           </p>
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
               <h4 className="font-semibold text-lg mb-2">Small Business Focus</h4>
               <ul className="text-slate-600 space-y-1">
@@ -349,11 +355,11 @@ export default function Home() {
       {/* Testimonials Section */}
       <section id="testimonials" className="bg-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Small Business Success Stories</h2>
-          <p className="text-indigo-200 text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">Small Business Success Stories</h2>
+          <p className="text-indigo-200 text-center max-w-3xl mx-auto mb-8 sm:mb-12">
             Hear from other small business owners who've transformed their operations with AI
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-indigo-700 rounded-xl p-6 shadow-lg">
                 <p className="italic mb-6">"{testimonial.content}"</p>
@@ -379,13 +385,13 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="container mx-auto px-4 py-16">
-        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+        <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
           Common Questions
         </span>
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           AI for Small Business FAQs
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mt-8">
           <div className="bg-white p-6 rounded-xl shadow-md">
             <h3 className="text-lg font-semibold mb-2">How much do AI solutions cost for small businesses?</h3>
             <p className="text-slate-600">My solutions start at ₹20,000 for basic implementations, with most small business projects ranging between ₹25,000-₹45,000. I offer flexible payment options and focus on solutions with clear ROI.</p>
@@ -410,11 +416,11 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8">
+          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
             Get Started
           </span>
-          <h2 className="text-3xl font-bold mb-4">Free AI Consultation for Your Business</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Free AI Consultation for Your Business</h2>
           <p className="text-slate-600 mb-8">
             Schedule a no-obligation call to discuss how AI can help your small business save time, reduce costs, and grow
           </p>
@@ -424,19 +430,19 @@ export default function Home() {
               <h3 className="text-lg font-semibold mb-4">What You'll Get:</h3>
               <ul className="space-y-3 text-slate-600">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                   <span>30-minute video call to discuss your business needs</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                   <span>Custom AI solution recommendation for your business</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                   <span>Cost estimate and expected ROI breakdown</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                   <span>Implementation timeline and process overview</span>
                 </li>
               </ul>
@@ -467,7 +473,7 @@ export default function Home() {
               </div>
             </div>
             
-            <form className="space-y-4">
+            <form className="space-y-4 mt-6 md:mt-0">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
                 <input
@@ -527,7 +533,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-semibold mb-4 flex items-center">
                 <Bot className="mr-2 text-indigo-400" /> 
@@ -549,7 +555,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div>
+            <div className="mt-6 sm:mt-0">
               <h3 className="text-lg font-semibold mb-4">AI Services</h3>
               <ul className="space-y-2 text-slate-300">
                 <li><a href="#services" className="hover:text-indigo-400">AI Chatbots</a></li>
@@ -559,7 +565,7 @@ export default function Home() {
               </ul>
             </div>
             
-            <div>
+            <div className="mt-6 md:mt-0">
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-slate-300">
                 <li><a href="#about" className="hover:text-indigo-400">About Me</a></li>
@@ -569,12 +575,12 @@ export default function Home() {
               </ul>
             </div>
             
-            <div>
+            <div className="mt-6 md:mt-0">
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
               <ul className="space-y-2 text-slate-300">
                 <li className="flex items-start">
-                  <Mail className="w-5 h-5 mr-2 text-indigo-400 mt-0.5" />
-                  <a href="mailto:akshaykumarbm.aifx@gmail.com" className="hover:text-indigo-400">
+                  <Mail className="w-5 h-5 mr-2 text-indigo-400 mt-0.5 flex-shrink-0" />
+                  <a href="mailto:akshaykumarbm.aifx@gmail.com" className="hover:text-indigo-400 break-all">
                     akshaykumarbm.aifx@gmail.com
                   </a>
                 </li>
@@ -586,7 +592,7 @@ export default function Home() {
           
           <div className="border-t border-slate-700 pt-6 text-center">
             <p className="mb-2">© {new Date().getFullYear()} Akshay Kumar BM. All rights reserved.</p>
-            <p className="text-sm text-slate-400">
+            <p class="text-sm text-slate-400">
               Helping small businesses leverage AI technology affordably since 2022
             </p>
           </div>
