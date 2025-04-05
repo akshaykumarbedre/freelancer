@@ -313,8 +313,7 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
           <p className="text-slate-600 mb-6">
             I'm Akshay, an AI specialist who helps small businesses access the same powerful technology 
-            that big companies use, but at a fraction of the cost. After 8 years of building enterprise AI 
-            solutions, I now focus exclusively on creating affordable AI tools for small businesses.
+            that big companies use, but at a fraction of the cost.
           </p>
           <p className="text-slate-600 mb-6">
             My mission is simple: make AI accessible to local shops, family restaurants, independent 
