@@ -131,7 +131,7 @@ const projects = {
     "category": "AI / Chatbot / Productivity", // Slightly shortened category
     "mainImage": "/images/slack-rag-placeholder.svg", // Placeholder image path
     "imageUrl": "/images/slack-rag-placeholder.svg", // Placeholder image path
-    "videoUrl": "/videos/slack-demo.mp4",
+    "videoUrl": "/slack-demo.mp4",
     "demoUrl": null,
     "githubUrl": "https://github.com/akshaykumarbedre/slack_chatbot",
 
