@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Volume2, VolumeX } from 'lucide-react';
 import projectsData from '../../../data/projects';
 import { useState, useRef } from 'react';
+import CalendlyButton from '../../../components/CalendlyButton';
 
 export default function ProjectDetail({ params }) {
   const [isMuted, setIsMuted] = useState(true);
@@ -273,12 +274,11 @@ export default function ProjectDetail({ params }) {
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to Transform Your Business?</h2>
           <p className="text-lg sm:text-xl mb-6 sm:mb-8">Let's discuss how this solution can help your business grow</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="/#contact" 
+            <CalendlyButton 
               className="bg-white text-indigo-600 px-6 sm:px-8 py-3 rounded-full hover:bg-indigo-50 transition shadow-md font-medium"
             >
               Book Free Consultation
-            </a>
+            </CalendlyButton>
             <a 
               href={`https://github.com/akshaykumarbedre/${projectId}`}
               target="_blank"

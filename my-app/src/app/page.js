@@ -4,11 +4,12 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { getProjectsForHomepage } from '../data/projects';
 import MobileMenu from '../components/MobileMenu';
+import CalendlyButton from '../components/CalendlyButton';
 
 export const metadata = {
-  title: 'Akshay Kumar BM | AI Solutions for Small Businesses',
+  title: 'Affordable AI Chatbots, Slack Bots & Automation for Small Businesses | Akshay Kumar BM',
   description: 'Affordable AI solutions for small businesses - chatbots, automation, data analytics, and custom integrations that boost efficiency and growth',
-  keywords: 'AI for small business, affordable chatbot, AI automation, small business AI, AI consultant, chatbot developer',
+  keywords: 'AI for small business, affordable chatbot, AI automation, small business AI, AI consultant, chatbot developer, slack bots',
 }
 
 export default function Home() {
@@ -16,26 +17,20 @@ export default function Home() {
   
   const services = [
     {
-      title: "AI Customer Service Chatbots",
-      description: "Affordable 24/7 customer support chatbots that handle inquiries, bookings, and FAQs so you can focus on running your business",
+      title: "AI Chatbot Development",
+      description: "Custom chatbots with RAG capabilities, agentic behaviors, and knowledge base integration. Perfect for customer support, sales, and internal use cases.",
       icon: <MessageSquare className="w-10 h-10 text-indigo-500" />,
+      priceRange: "Starting at ₹30,000"
+    },
+    {
+      title: "System Integrations",
+      description: "Seamless AI integrations with Slack, CRM systems, Telegram, and other business tools. Connect your existing workflows with powerful AI capabilities.",
+      icon: <Workflow className="w-10 h-10 text-indigo-500" />,
       priceRange: "Starting at ₹25,000"
     },
     {
       title: "Business Process Automation",
-      description: "Streamline repetitive tasks like email sorting, appointment scheduling, and document processing with custom AI solutions",
-      icon: <Workflow className="w-10 h-10 text-indigo-500" />,
-      priceRange: "Starting at ₹30,000"
-    },
-    {
-      title: "Small Business Analytics",
-      description: "Turn your business data into actionable insights with easy-to-understand dashboards and customer behavior analysis",
-      icon: <BarChart className="w-10 h-10 text-indigo-500" />,
-      priceRange: "Starting at ₹20,000"
-    },
-    {
-      title: "Custom AI Integrations",
-      description: "Integrate AI tools into your existing systems (website, CRM, inventory) without disrupting your current operations",
+      description: "Automate repetitive tasks, workflows, and business processes with custom AI solutions that save time and reduce operational costs.",
       icon: <Zap className="w-10 h-10 text-indigo-500" />,
       priceRange: "Starting at ₹35,000"
     }
@@ -107,20 +102,19 @@ export default function Home() {
             AI Solutions for Small Businesses
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900 leading-tight">
-            Grow Your Small Business with
-            <span className="text-indigo-600 block mt-1">Affordable AI Tools</span>
+            Powerful AI Tools for Small Businesses
+            <span className="text-indigo-600 block mt-1">Without the Big Tech Price Tag</span>
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto md:mx-0 mb-8">
-            Custom chatbots, automation solutions, and AI integrations that save time, 
-            reduce costs, and help your small business compete with the big players.
+            Save Time, Cut Costs & Impress Your Customers with Custom AI Chatbots, 
+            Automation & Slack Bots that work for your business.
           </p>
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-            <a 
-              href="#contact" 
+            <CalendlyButton 
               className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md font-medium text-center"
             >
-              Get Free Consultation
-            </a>
+              Book Free Call Instantly
+            </CalendlyButton>
             <a 
               href="#services" 
               className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full hover:bg-indigo-50 transition font-medium text-center"
@@ -171,7 +165,7 @@ export default function Home() {
         <p className="text-slate-600 max-w-3xl mb-8 sm:mb-12">
           Powerful AI tools that fit your budget and solve real problems for your small business
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
@@ -229,25 +223,7 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-3">
-                    <a 
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium"
-                    >
-                      See Demo
-                    </a>
-                    <span className="text-slate-300">|</span>
-                    <a 
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center"
-                    >
-                      <Github className="w-4 h-4 mr-1" /> Code
-                    </a>
-                  </div>
+                      
                 </div>
               </Link>
             </div>
@@ -471,6 +447,14 @@ export default function Home() {
                   <Linkedin className="mr-3 text-indigo-500" />linkedin.com/in/akshaykumarbm
                 </a>
               </div>
+              
+              <div className="mt-8">
+                <CalendlyButton 
+                  className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md font-medium text-center inline-block"
+                >
+                  Book Free Call Instantly
+                </CalendlyButton>
+              </div>
             </div>
             
             <form className="space-y-4 mt-6 md:mt-0">
@@ -594,7 +578,7 @@ export default function Home() {
             <p className="mb-2">© {new Date().getFullYear()} Akshay Kumar BM. All rights reserved.</p>
             <p class="text-sm text-slate-400">
               Helping small businesses leverage AI technology affordably since 2022
-            </p>
+            </p>  
           </div>
         </div>
       </footer>

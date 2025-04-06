@@ -12,8 +12,8 @@ const projects = {
     "tagline": "Turn your website into an intelligent AI support assistant.",
     "description": "Automatically extracts and structures knowledge from your website (or text) to power a smart chatbot, providing instant, accurate customer support.",
     "category": "AI / Customer Support Automation", // Kept category specific to this project
-    "mainImage": "/images/webai-main-placeholder.svg", // Placeholder image
-    "imageUrl": "/images/webai-card-placeholder.svg", // Placeholder image
+    "mainImage": "webai-main-placeholder.webp", // Placeholder image
+    "imageUrl": "/webai-main-placeholder.webp", // Placeholder image
     "videoUrl": "/webai-demo.mp4", // Placeholder video URL
     "demoUrl": null, // No demo URL provided
     "githubUrl": null, // No GitHub URL provided
@@ -129,8 +129,8 @@ const projects = {
     "tagline": "Answer questions about your documents directly in Slack.",
     "description": "AI-powered Slack chatbot using RAG to answer user queries based on the content of a specific PDF document ('zepto.pdf').",
     "category": "AI / Chatbot / Productivity", // Slightly shortened category
-    "mainImage": "/images/slack-rag-placeholder.svg", // Placeholder image path
-    "imageUrl": "/images/slack-rag-placeholder.svg", // Placeholder image path
+    "mainImage": "/slack-rag-placeholder.webp", // Placeholder image path
+    "imageUrl": "/slack-rag-placeholder.webp", // Placeholder image path
     "videoUrl": "/slack-demo.mp4",
     "demoUrl": null,
     "githubUrl": "https://github.com/akshaykumarbedre/slack_chatbot",
