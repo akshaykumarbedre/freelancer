@@ -73,12 +73,20 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
       {/* Header with Mobile Navigation */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold flex items-center">
-            <Bot className="mr-2 text-indigo-600" /> 
-            <span className="hidden sm:inline">Akshay Kumar BM</span>
-            <span className="sm:hidden">AK</span>
-          </h1>
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-16 w-16 mr-3">
+              <Image 
+                src="/logo.svg"
+                alt="Akshay Kumar BM Logo"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+            <span className="hidden sm:inline text-2xl font-bold">Akshay Kumar BM</span>
+            <span className="sm:hidden text-2xl font-bold">AK</span>
+          </Link>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-4 text-base">
@@ -387,9 +395,9 @@ export default function Home() {
             <p className="text-slate-600">Most small business solutions can be implemented in 2-4 weeks. Simple chatbots and automation tools can be ready in as little as 7-10 days. I understand small businesses need quick results.</p>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-lg font-semibold mb-2">Will AI tools integrate with my existing systems?</h3>
-            <p className="text-slate-600">Yes, I specialize in integrating AI tools with commonly used small business systems like WordPress, Shopify, QuickBooks, and various CRM platforms without disrupting your operations.</p>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <h3 class="text-lg font-semibold mb-2">Will AI tools integrate with my existing systems?</h3>
+            <p class="text-slate-600">Yes, I specialize in integrating AI tools with commonly used small business systems like WordPress, Shopify, QuickBooks, and various CRM platforms without disrupting your operations.</p>
           </div>
         </div>
       </section>
@@ -405,115 +413,65 @@ export default function Home() {
             Schedule a no-obligation call to discuss how AI can help your small business save time, reduce costs, and grow
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">What You'll Get:</h3>
-              <ul className="space-y-3 text-slate-600">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span>30-minute video call to discuss your business needs</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span>Custom AI solution recommendation for your business</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span>Cost estimate and expected ROI breakdown</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span>Implementation timeline and process overview</span>
-                </li>
-              </ul>
-              
-              <div className="mt-6 space-y-4">
-                <a 
-                  href="mailto:akshaykumarbm.aifx@gmail.com" 
-                  className="flex items-center hover:text-indigo-600 transition"
-                >
-                  <Mail className="mr-3 text-indigo-500" />akshaykumarbm.aifx@gmail.com
-                </a>
-                <a 
-                  href="https://github.com/akshaykumarbedre" 
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="flex items-center hover:text-indigo-600 transition"
-                >
-                  <Github className="mr-3 text-indigo-500" />github.com/akshaykumarbedre
-                </a>
-                <a 
-                  href="https://linkedin.com/in/akshaykumarbm" 
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="flex items-center hover:text-indigo-600 transition"
-                >
-                  <Linkedin className="mr-3 text-indigo-500" />linkedin.com/in/akshaykumarbm
-                </a>
+          <div className="flex flex-col items-center">
+            <h3 className="text-lg font-semibold mb-4">What You'll Get:</h3>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-start max-w-md">
+                <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                <span className="text-slate-600">30-minute video call to discuss your business needs</span>
               </div>
-              
-              <div className="mt-8">
-                <CalendlyButton 
-                  className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md font-medium text-center inline-block"
-                >
-                  Book Free Call Instantly
-                </CalendlyButton>
+              <div className="flex items-start max-w-md">
+                <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                <span className="text-slate-600">Custom AI solution recommendation for your business</span>
+              </div>
+              <div className="flex items-start max-w-md">
+                <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                <span className="text-slate-600">Cost estimate and expected ROI breakdown</span>
+              </div>
+              <div className="flex items-start max-w-md">
+                <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                <span className="text-slate-600">Implementation timeline and process overview</span>
               </div>
             </div>
             
-            <form className="space-y-4 mt-6 md:mt-0">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="John Smith"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="business" className="block text-sm font-medium text-slate-700 mb-1">Business Name</label>
-                <input
-                  type="text"
-                  id="business"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="Your Business Name"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="you@yourbusiness.com"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="interest" className="block text-sm font-medium text-slate-700 mb-1">I'm interested in:</label>
-                <select
-                  id="interest"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  required
-                >
-                  <option value="">Select an option</option>
-                  <option value="chatbot">AI Chatbot</option>
-                  <option value="automation">Business Automation</option>
-                  <option value="analytics">Data Analytics</option>
-                  <option value="integration">Custom AI Integration</option>
-                  <option value="other">Other/Not Sure Yet</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-indigo-600 text-white py-3 px-4 rounded-md hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 font-medium"
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <a 
+                href="mailto:akshaykumarbm.aifx@gmail.com" 
+                className="flex items-center hover:text-indigo-600 transition"
               >
-                Book Free Consultation
-              </button>
-            </form>
+                <Mail className="mr-3 text-indigo-500" />akshaykumarbm.aifx@gmail.com
+              </a>
+              <a 
+                href="https://github.com/akshaykumarbedre" 
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="flex items-center hover:text-indigo-600 transition"
+              >
+                <Github className="mr-3 text-indigo-500" />github.com/akshaykumarbedre
+              </a>
+              <a 
+                href="https://linkedin.com/in/akshaykumarbm" 
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="flex items-center hover:text-indigo-600 transition"
+              >
+                <Linkedin className="mr-3 text-indigo-500" />linkedin.com/in/akshaykumarbm
+              </a>
+            </div>
+            
+            {/* Calendly widget */}
+            <div className="w-full">
+              <div 
+                className="calendly-inline-widget" 
+                data-url="https://calendly.com/akshaykumarbm-aifx/30min?primary_color=5705f5" 
+                style={{minWidth: "320px", height: "700px"}}
+              ></div>
+              <script 
+                type="text/javascript" 
+                src="https://assets.calendly.com/assets/external/widget.js" 
+                async
+              ></script>
+            </div>
           </div>
         </div>
       </section>
@@ -524,7 +482,14 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <Bot className="mr-2 text-indigo-400" /> 
+                <div className="relative h-14 w-14 mr-3">
+                  <Image 
+                    src="/logo.svg"
+                    alt="Akshay Kumar BM Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 Akshay Kumar BM
               </h3>
               <p className="text-slate-300 mb-4">

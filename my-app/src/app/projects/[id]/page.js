@@ -4,21 +4,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Volume2, VolumeX } from 'lucide-react';
 import projectsData from '../../../data/projects';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import CalendlyButton from '../../../components/CalendlyButton';
 
 export default function ProjectDetail({ params }) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
-  
-  // Properly handle params
-  const projectId = params.id;
-  const project = projectsData[projectId];
-  
+  const [projectId, setProjectId] = useState(null);
+  const [project, setProject] = useState(null);
+
+  // Unwrap params using React.use()
+  useEffect(() => {
+    params.then((resolvedParams) => {
+      const id = resolvedParams.id;
+      setProjectId(id);
+      setProject(projectsData[id]);
+    });
+  }, [params]);
+
   if (!project) {
     return <div>Project not found</div>;
   }
-  
+
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
@@ -30,15 +37,17 @@ export default function ProjectDetail({ params }) {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4 sm:py-8">
-          <Link href="/#projects" className="inline-flex items-center text-indigo-600 mb-4 sm:mb-6 hover:text-indigo-800">
+        <div className="container mx-auto px-4 py-4 sm:py-8 flex flex-col sm:flex-row items-center sm:justify-between">
+          <Link href="/#projects" className="inline-flex items-center text-indigo-600 mb-4 sm:mb-0 hover:text-indigo-800">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Projects
           </Link>
-          <span className="bg-indigo-100 text-indigo-700 px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 inline-block">
-            {project.category}
-          </span>
-          <h1 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">{project.title}</h1>
-          <p className="text-lg sm:text-xl text-slate-600">{project.tagline}</p>
+          <div className="text-center sm:text-left">
+            <span className="bg-indigo-100 text-indigo-700 px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 inline-block">
+              {project.category}
+            </span>
+            <h1 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">{project.title}</h1>
+            <p className="text-lg sm:text-xl text-slate-600">{project.tagline}</p>
+          </div>
         </div>
       </header>
 
@@ -77,7 +86,7 @@ export default function ProjectDetail({ params }) {
               />
             )}
           </div>
-          <div>
+          <div className="mt-4 sm:mt-0">
             <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Potential Benefits</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(project.benefits).map(([key, value]) => (
