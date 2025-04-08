@@ -271,62 +271,66 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center bg-white rounded-xl shadow-sm my-8">
-        <div className="md:w-1/3 mb-8 md:mb-0">
-          <div className="relative h-64 w-64 sm:h-80 sm:w-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
-            <Image 
-              src="/profile-photo.jpg" 
-              alt="Akshay Kumar BM" 
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-        <div className="md:w-2/3 md:pl-12">
-          <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
-            Your AI Partner
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
-          <p className="text-slate-600 mb-6">
-            I'm Akshay, an AI specialist who helps small businesses access the same powerful technology 
-            that big companies use, but at a fraction of the cost. After 8 years of building enterprise AI 
-            solutions, I now focus exclusively on creating affordable AI tools for small businesses.
-          </p>
-          <p className="text-slate-600 mb-6">
-            My mission is simple: make AI accessible to local shops, family restaurants, independent 
-            professionals, and growing small businesses. Every solution I build is designed to deliver 
-            immediate value while being easy to use and maintain.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            <div>
-              <h4 className="font-semibold text-lg mb-2">Small Business Focus</h4>
-              <ul className="text-slate-600 space-y-1">
-                <li>• Budget-friendly solutions</li>
-                <li>• Quick implementation</li>
-                <li>• Simple, user-friendly tools</li>
-                <li>• Measurable ROI</li>
-                <li>• Ongoing support</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg mb-2">AI Expertise</h4>
-              <ul className="text-slate-600 space-y-1">
-                <li>• Conversational AI (Chatbots)</li>
-                <li>• Workflow Automation</li>
-                <li>• Data Analytics</li>
-                <li>• Customer Insights</li>
-                <li>• Integration Specialist</li>
-              </ul>
-            </div>
-          </div>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800"
-          >
-            Let's discuss your business needs <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </a>
-        </div>
-      </section>
+{/* About Section */}
+<section id="about" className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center bg-white rounded-xl shadow-sm my-8">
+  <div className="md:w-1/3 mb-8 md:mb-0">
+  <div className="relative h-64 w-64 sm:h-80 sm:w-80 mx-auto rounded-1xl overflow-hidden border-4 border-white shadow-xl">
+  <Image 
+    src="/profile-photo.jpg" 
+    alt="Akshay Kumar BM" 
+    fill
+    className="object-cover"
+  />
+</div>
+
+  </div>
+  <div className="md:w-2/3 md:pl-12">
+    <span className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 inline-block">
+      Your AI Partner
+    </span>
+    <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
+    <p className="text-slate-600 mb-6">
+      I'm Akshay, an AI developer dedicated to helping small businesses harness the power of artificial intelligence. 
+      With over 1.5 years of hands-on experience, I specialize in building practical AI applications tailored for real-world needs.
+    </p>
+    <p className="text-slate-600 mb-6">
+      I focus on building smart, agentic systems using tools like Langchain, FastAPI, and Python. I’ve built complete end-to-end 
+      RAG (Retrieval-Augmented Generation) applications, AI-powered automation, and seamless integrations with platforms like Slack, 
+      Telegram, and various CMS tools. Whether you're looking for a chatbot, a prediction model, or a full AI solution—I design tools 
+      that are easy to use, scalable, and built with your business goals in mind.
+    </p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Small Business Focus</h4>
+        <ul className="text-slate-600 space-y-1">
+          <li>• Cost-effective AI solutions</li>
+          <li>• Quick-to-launch MVPs</li>
+          <li>• Automation that saves time</li>
+          <li>• Custom integrations (CMS, chat, more)</li>
+          <li>• Friendly support throughout</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">AI Expertise</h4>
+        <ul className="text-slate-600 space-y-1">
+          <li>• Langchain & Agentic RAG</li>
+          <li>• ML & DL (Prediction, CNN, Classification)</li>
+          <li>• End-to-end AI Applications</li>
+          <li>• API development (FastAPI, PostgREST)</li>
+          <li>• Platform Integration (Slack, Telegram)</li>
+          <li>• DevOps with Docker & AWS</li>
+        </ul>
+      </div>
+    </div>
+    <a 
+      href="#contact" 
+      className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800"
+    >
+      Let's discuss your business needs <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    </a>
+  </div>
+</section>
+
 
       {/* Testimonials Section */}
       <section id="testimonials" className="bg-indigo-600 py-16 text-white">

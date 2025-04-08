@@ -252,19 +252,16 @@ export default function ProjectDetail({ params }) {
       {/* Technical Details */}
       <section className="container mx-auto px-4 py-8 sm:py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Technical Details</h2>
-        <div className="grid md:grid-cols-1 gap-8 sm:gap-12">
-          <div>
-            <h3 className="font-semibold mb-4 sm:mb-6">Technology Stack</h3>
-            <div className="space-y-3 sm:space-y-4">
-              {project.technical.stack.map((tech, index) => (
-                <div key={index} className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
-                  <h4 className="font-medium mb-2">{tech.name}</h4>
-                  <p className="text-slate-600">{tech.purpose}</p>
-                </div>
-              ))}
-            </div>
+        <div>
+          <h3 className="font-semibold mb-4 sm:mb-6">Technology Stack</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {project.technical.stack.map((tech, index) => (
+              <div key={index} className="bg-white p-4 sm:p-6 rounded-xl shadow-md flex flex-col h-full">
+                <h4 className="font-medium mb-2 text-lg">{tech.name}</h4>
+                <p className="text-slate-600 flex-grow">{tech.purpose}</p>
+              </div>
+            ))}
           </div>
-          {/* Remove the Security Features section */}
         </div>
       </section>
 
